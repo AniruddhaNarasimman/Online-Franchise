@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+
+<html>
+	<head> 
+		<title> Candidate Registration Form </title>
+		<link rel="stylesheet" href="{% static  'candidatereg/style.css' %}">
+	</head>
+	<body>
+		<img class="swasthi" src="{% static 'candiatereg/Swasthi.jpg' %}" alt="img not found">
+		<h1 class="relative"> Candidate Registration Form </h1>
+		
+		<form method="POST" >
+			{% csrf_token %}
+			<div class="fname">
+				<br><lable for="Fname" class="fname"> First Name: </label>
+				<input type="text" id="Fname" name="fname" placeholder="first name" required></br>
+			</div>
+			
+
+			<div class="sname"> 
+				<br><lable for = "Sname"> Second Name: </lable>
+				<input type="text" id="Sname" name="sname" placeholder="second name" required></br>
+			</div>
+
+			<div class="dob">
+				<br><lable for="DOB"> Date of Birth: </lable>
+				<input type="date" id="DOB" name="dob" required></br>
+			</div>
+			
+			<div class="gendre">
+				<br><lable for="gendre"> Gender: </lable>
+				<br> <input type="radio" id="Male" name="gendre" value="Male" required> 
+				<lable for="Male"> Male </lable>
+			
+				<input type="radio" id="Female" name="gendre" value="Female" required>
+				<lable for="Female"> Female </lable>
+				<input type="radio" id="none" name="gendre" value="Other">	
+				<lable for="None"> Other </lable> </br>	
+			
+			</div>
+				
+				
+			<div class="dept">
+				<br><label for="Dept"> Department: </lable>
+					<select name="dept" id ="Dept">
+						<option value="select"> Select </option>
+						<option value="IT"> Btech IT </option>
+						<option value="ECE"> BE. ECE </option>
+						<option value="CSE"> B.E CSE </option>
+						<option value="CIVIL"> B.E CIVIL </option>
+						<option value="PRODUCTION"> B.E Production </option>
+					</select> </br>
+			</div>
+			
+			
+			<div class="rno">
+				<br><lable for="Rollno"> Roll Number: </lable>
+				<input type="text" id="Rn" name="rollno" placeholder="roll number" required> </br>
+			</div>
+						
+			<div class="photo">
+				<br><label for="photo">Photo: </label>
+				<input type="file" accept="image/*" required>
+			</div>
+		</from>				
+
+		<br><button type="submit" class="button1" >
+			Submit 	
+		</button></br>
+		
+	</body>
+</html>
